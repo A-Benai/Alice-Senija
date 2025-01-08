@@ -11,17 +11,17 @@ body {
 
 /* Contenitore dell'invito */
 .invito {
-  width: 100%;
-  height: 100%;
+  width: 300px;
+  height: 400px;
   position: relative;
-  overflow: hidden; /* Nasconde l'area oltre il contenitore */
+  overflow: hidden;
   cursor: pointer;
   border-radius: 10px;
 }
 
 /* Stili per la copertina e il contenuto */
 .copertina, .contenuto {
-  width: 100%; /* Ogni parte avrà metà della larghezza */
+  width: 50%; /* Ogni parte avrà metà della larghezza */
   height: 100%;
   position: absolute;
   top: 0;
@@ -37,28 +37,30 @@ body {
   border-radius: 10px;
 }
 
-/* Inizialmente la copertina è a sinistra e l'interno a destra */
+/* Inizialmente la copertina è divisa al centro */
 .copertina {
   left: 0;
   z-index: 1;
 }
 
 .contenuto {
-  right: -100%; /* L'immagine interna è inizialmente nascosta a destra */
+  left: 50%; /* L'immagine interna inizia a destra della copertina */
   z-index: 0;
+  transition: left 1s ease-in-out;
 }
 
-/* Quando l'invito è "aperto" */
+/* Quando l'invito è "aperto", le due metà della copertina si separano */
 .invito.open .copertina {
-  left: -50%; /* Muove la copertina a sinistra */
+  left: -50%; /* Sposta la parte sinistra della copertina a sinistra */
 }
 
 .invito.open .contenuto {
-  right: 0; /* Mostra il contenuto (l'immagine interna) */
+  left: 0; /* Sposta la parte destra della copertina a destra */
 }
 
 /* Aggiungi l'effetto di hover per l'immagine della copertina */
 .copertina img:hover {
   transform: scale(1.05);
 }
+
 
