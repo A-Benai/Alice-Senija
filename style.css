@@ -15,16 +15,16 @@ body, html {
 
 .container {
     position: relative;
-    width: 80vw;  /* Ridotto per migliorare l'allineamento */
-    height: 80vh; /* Ridotto per migliorare l'allineamento */
+    width: 60vw;  /* Ancora più ridotto */
+    height: 60vh; /* Ancora più ridotto */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .cover-left, .cover-right {
-    width: 40%;    /* Ridotto per le copertine */
-    height: 80%;   /* Ridotto per le copertine */
+    width: 35%;    /* Ulteriore riduzione delle copertine */
+    height: 70%;   /* Ulteriore riduzione delle copertine */
     overflow: hidden;
     position: absolute;
     transition: all 1s ease;
@@ -64,4 +64,5 @@ body, html {
 .hidden {
     display: none;
 }
+
 
