@@ -19,17 +19,7 @@ body {
   border-radius: 10px;
 }
 
-/* Stili per la copertina e il contenuto */
-.copertina, .contenuto {
-  width: 50%; /* Ogni parte avrà metà della larghezza */
-  height: 100%;
-  position: absolute;
-  top: 0;
-  transition: all 1s ease-in-out; /* Transizione dolce */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 
 .copertina img, .contenuto img {
   width: 100%;
@@ -37,26 +27,6 @@ body {
   border-radius: 10px;
 }
 
-/* Inizialmente la copertina è divisa al centro */
-.copertina {
-  left: 0;
-  z-index: 1;
-}
-
-.contenuto {
-  left: 50%; /* L'immagine interna inizia a destra della copertina */
-  z-index: 0;
-  transition: left 1s ease-in-out;
-}
-
-/* Quando l'invito è "aperto", le due metà della copertina si separano */
-.invito.open .copertina {
-  left: -50%; /* Sposta la parte sinistra della copertina a sinistra */
-}
-
-.invito.open .contenuto {
-  left: 0; /* Sposta la parte destra della copertina a destra */
-}
 
 /* Aggiungi l'effetto di hover per l'immagine della copertina */
 .copertina img:hover {
