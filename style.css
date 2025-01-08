@@ -37,29 +37,6 @@ body {
   border-radius: 10px;
 }
 
-/* Inizialmente la copertina è visibile */
-.copertina {
-  left: 0;
-  z-index: 1;
-}
 
-.contenuto {
-  left: 100%; /* L'immagine del contenuto è inizialmente nascosta alla destra */
-  z-index: 0;
-}
-
-/* Quando l'invito è "aperto", la copertina si sposta e il contenuto appare */
-.invito.open .copertina {
-  left: -100%; /* Sposta la copertura a sinistra per far vedere il contenuto */
-}
-
-.invito.open .contenuto {
-  left: 0; /* Sposta il contenuto nella posizione visibile */
-}
-
-/* Aggiungi l'effetto di hover per l'immagine della copertina */
-.copertina img:hover {
-  transform: scale(1.05);
-}
 
 
