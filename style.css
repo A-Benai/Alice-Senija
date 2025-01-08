@@ -12,30 +12,67 @@ body {
 /* Contenitore dell'invito, ingrandito di almeno il doppio */
 .invito {
   width: 600px; /* Doppio della larghezza iniziale */
-  height: 700px; /* Doppio dell'altezza iniziale */
+  height: 800px; /* Doppio dell'altezza iniziale */
   position: relative;
   overflow: hidden;
   cursor: pointer;
   border-radius: 10px;
+  transition: transform 0.5s ease-in-out;
 }
 
-/* Stili per la copertina e il contenuto */
-.copertina, .contenuto {
-  width: 100%; /* Ogni parte avrà tutta la larghezza */
+/* Copertina sinistra e destra */
+.copertina-sx, .copertina-dx, .contenuto {
+  width: 50%; /* Ogni parte avrà metà della larghezza */
   height: 100%;
   position: absolute;
   top: 0;
+  transition: all 1s ease-in-out; /* Transizione dolce */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.copertina img, .contenuto img {
-  width: 200%; /* L'immagine è 2 volte più grande */
+.copertina-sx img, .copertina-dx img, .contenuto img {
+  width: 100%;
   height: 100%;
-  object-fit: cover;
   border-radius: 10px;
 }
+
+/* Posizione iniziale della copertina sinistra e destra */
+.copertina-sx {
+  left: 0; /* Copertina sinistra sulla sinistra */
+  z-index: 1;
+}
+
+.copertina-dx {
+  left: 50%; /* Copertina destra inizia sulla metà destra */
+  z-index: 1;
+}
+
+.contenuto {
+  left: 50%; /* Il contenuto si trova sulla metà destra */
+  z-index: 0;
+  transition: left 1s ease-in-out;
+}
+
+/* Quando l'invito è "aperto", le due metà della copertina si separano */
+.invito.open .copertina-sx {
+  left: -50%; /* La parte sinistra della copertina si sposta a sinistra */
+}
+
+.invito.open .copertina-dx {
+  left: 100%; /* La parte destra della copertina si sposta a destra */
+}
+
+.invito.open .contenuto {
+  left: 0; /* Il contenuto si sposta a sinistra per essere visibile */
+}
+
+/* Aggiungi l'effetto di hover per l'immagine della copertina */
+.copertina-sx img:hover, .copertina-dx img:hover {
+  transform: scale(1.05); /* Aumenta la dimensione dell'immagine di un 5% */
+}
+
 
 
 
