@@ -15,22 +15,20 @@ body, html {
 
 .container {
     position: relative;
-    width: 60vw;  /* Ancora più ridotto */
-    height: 60vh; /* Ancora più ridotto */
+    width: 100vw;
+    height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .cover-left, .cover-right {
-    width: 35%;    /* Ulteriore riduzione delle copertine */
-    height: 70%;   /* Ulteriore riduzione delle copertine */
+    width: 50%;
+    height: 100%;
     overflow: hidden;
-    position: absolute;
     transition: all 1s ease;
+    position: absolute;
 }
 
-.cover-left img, .cover-right img {
+.cover-left img, .cover-right img, .inner-image img {
     width: 100%;
     height: auto;
 }
@@ -64,5 +62,3 @@ body, html {
 .hidden {
     display: none;
 }
-
-
