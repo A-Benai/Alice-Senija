@@ -1,79 +1,65 @@
-/* Stile di base per il body */
-body {
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background: linear-gradient(to bottom, #f5f5f5, #eaeaea);
-  font-family: 'Arial', sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Contenitore dell'invito, ingrandito di almeno il doppio */
-.invito {
-  width: 600px; /* Doppio della larghezza iniziale */
-  height: 600px; /* Doppio dell'altezza iniziale */
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-  border-radius: 10px;
-  transition: transform 0.5s ease-in-out;
+body, html {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    overflow: hidden;
 }
 
-/* Copertina sinistra e destra */
-.Copertinasx, .copertinadx, .contenuto {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  transition: all 1s ease-in-out; /* Transizione dolce */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
 }
 
-.Copertinasx img, .copertinadx img, .contenuto img {
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
+.cover-left, .cover-right {
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: all 1s ease;
+    position: absolute;
 }
 
-/* Posizione iniziale della copertina sinistra e destra */
-.Copertinasx {
-  left: 0; /* Copertina sinistra sulla sinistra */
-  z-index: 1;
+.cover-left img, .cover-right img, .inner-image img {
+    width: 100%;
+    height: auto;
 }
 
-.copertinadx {
-  left: 50%; /* Copertina destra inizia sulla metà destra */
-  z-index: 1;
+.inner-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
 }
 
-.contenuto {
-  left: 50%; /* Il contenuto si trova sulla metà destra */
-  z-index: 0;
-  transition: left 1s ease-in-out;
+.cover-left {
+    left: 0;
 }
 
-/* Quando l'invito è "aperto", le due metà della copertina si separano */
-.invito.open .Copertinasx {
-  left: -50%; /* La parte sinistra della copertina si sposta a sinistra */
+.cover-right {
+    right: 0;
 }
 
-.invito.open .copertinadx {
-  left: 100%; /* La parte destra della copertina si sposta a destra */
+.inner-image-content {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
-.invito.open .contenuto {
-  left: 0; /* Il contenuto si sposta a sinistra per essere visibile */
+.hidden {
+    display: none;
 }
-
-/* Aggiungi l'effetto di hover per l'immagine della copertina */
-.Copertinasx img:hover, .copertinadx img:hover {
-  transform: scale(1.05); /* Aumenta la dimensione dell'immagine di un 5% */
-}
-
-
-
-
 
