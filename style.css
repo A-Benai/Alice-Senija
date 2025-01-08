@@ -12,7 +12,7 @@ body {
 /* Contenitore dell'invito, ingrandito di almeno il doppio */
 .invito {
   width: 600px; /* Doppio della larghezza iniziale */
-  height: 800px; /* Doppio dell'altezza iniziale */
+  height: 600px; /* Doppio dell'altezza iniziale */
   position: relative;
   overflow: hidden;
   cursor: pointer;
@@ -22,7 +22,7 @@ body {
 
 /* Copertina sinistra e destra */
 .copertina-sx, .copertina-dx, .contenuto {
-  width: 50%; /* Ogni parte avrà metà della larghezza */
+  width: 100%; /* Ogni parte avrà metà della larghezza */
   height: 100%;
   position: absolute;
   top: 0;
