@@ -9,24 +9,53 @@ body {
   font-family: 'Arial', sans-serif;
 }
 
-/* Contenitore dell'invito */
+/* Contenitore dell'invito, ingrandito di almeno il doppio */
 .invito {
-  width: 300px;
-  height: 400px;
+  width: 600px; /* Doppio della larghezza iniziale */
+  height: 800px; /* Doppio dell'altezza iniziale */
   position: relative;
   overflow: hidden;
   cursor: pointer;
   border-radius: 10px;
 }
 
-
+/* Stili per la copertina e il contenuto */
+.copertina, .contenuto {
+  width: 100%; /* Ogni parte avrà tutta la larghezza */
+  height: 100%;
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .copertina img, .contenuto img {
-  width: 100%;
+  width: 200%; /* L'immagine è 2 volte più grande */
   height: 100%;
+  object-fit: cover;
   border-radius: 10px;
 }
 
+/* Inizialmente la copertina è visibile */
+.copertina {
+  left: 0;
+  z-index: 1;
+}
+
+.contenuto {
+  left: 100%; /* L'immagine del contenuto è inizialmente nascosta alla destra */
+  z-index: 0;
+}
+
+/* Quando l'invito è "aperto", la copertina si sposta e il contenuto appare */
+.invito.open .copertina {
+  left: -100%; /* Sposta la copertura a sinistra per far vedere il contenuto */
+}
+
+.invito.open .contenuto {
+  left: 0; /* Sposta il contenuto nella posizione visibile */
+}
 
 /* Aggiungi l'effetto di hover per l'immagine della copertina */
 .copertina img:hover {
