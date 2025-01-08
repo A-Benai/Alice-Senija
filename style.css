@@ -11,8 +11,8 @@ body {
 
 /* Contenitore dell'invito */
 .invito {
-  width: 300px;
-  height: 400px;
+  width: 600px;
+  height: 700px;
   position: relative;
   overflow: hidden; /* Nasconde l'area oltre il contenitore */
   cursor: pointer;
