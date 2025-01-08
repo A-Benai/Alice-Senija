@@ -1,3 +1,4 @@
+/* Stile di base per il body */
 body {
   margin: 0;
   display: flex;
@@ -8,20 +9,26 @@ body {
   font-family: 'Arial', sans-serif;
 }
 
+/* Contenitore dell'invito */
 .invito {
   width: 300px;
   height: 400px;
   position: relative;
-  perspective: 1000px;
+  overflow: hidden; /* Nasconde l'area oltre il contenitore */
+  cursor: pointer;
+  border-radius: 10px;
 }
 
+/* Stili per la copertina e il contenuto */
 .copertina, .contenuto {
-  width: 100%;
+  width: 50%; /* Ogni parte avrà metà della larghezza */
   height: 100%;
   position: absolute;
-  backface-visibility: hidden;
-  transform-style: preserve-3d;
-  border-radius: 10px;
+  top: 0;
+  transition: all 1s ease-in-out; /* Transizione dolce */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .copertina img, .contenuto img {
@@ -30,21 +37,28 @@ body {
   border-radius: 10px;
 }
 
+/* Inizialmente la copertina è a sinistra e l'interno a destra */
 .copertina {
-  transform: rotateY(0);
-  cursor: pointer;
+  left: 0;
+  z-index: 1;
 }
 
 .contenuto {
-  transform: rotateY(180deg);
+  right: -100%; /* L'immagine interna è inizialmente nascosta a destra */
+  z-index: 0;
 }
 
+/* Quando l'invito è "aperto" */
 .invito.open .copertina {
-  transform: rotateY(-180deg);
-  transition: transform 1s;
+  left: -50%; /* Muove la copertina a sinistra */
 }
 
 .invito.open .contenuto {
-  transform: rotateY(0);
-  transition: transform 1s;
+  right: 0; /* Mostra il contenuto (l'immagine interna) */
 }
+
+/* Aggiungi l'effetto di hover per l'immagine della copertina */
+.copertina img:hover {
+  transform: scale(1.05);
+}
+
