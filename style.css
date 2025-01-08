@@ -1,0 +1,50 @@
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to bottom, #f5f5f5, #eaeaea);
+  font-family: 'Arial', sans-serif;
+}
+
+.invito {
+  width: 300px;
+  height: 400px;
+  position: relative;
+  perspective: 1000px;
+}
+
+.copertina, .contenuto {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  border-radius: 10px;
+}
+
+.copertina img, .contenuto img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.copertina {
+  transform: rotateY(0);
+  cursor: pointer;
+}
+
+.contenuto {
+  transform: rotateY(180deg);
+}
+
+.invito.open .copertina {
+  transform: rotateY(-180deg);
+  transition: transform 1s;
+}
+
+.invito.open .contenuto {
+  transform: rotateY(0);
+  transition: transform 1s;
+}
