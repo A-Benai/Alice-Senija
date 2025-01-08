@@ -15,20 +15,22 @@ body, html {
 
 .container {
     position: relative;
-    width: 100vw;
-    height: 100vh;
+    width: 80vw;  /* Ridotto per migliorare l'allineamento */
+    height: 80vh; /* Ridotto per migliorare l'allineamento */
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .cover-left, .cover-right {
-    width: 50%;
-    height: 100%;
+    width: 40%;    /* Ridotto per le copertine */
+    height: 80%;   /* Ridotto per le copertine */
     overflow: hidden;
-    transition: all 1s ease;
     position: absolute;
+    transition: all 1s ease;
 }
 
-.cover-left img, .cover-right img, .inner-image img {
+.cover-left img, .cover-right img {
     width: 100%;
     height: auto;
 }
