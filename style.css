@@ -12,7 +12,7 @@ body {
 /* Contenitore dell'invito, ingrandito di almeno il doppio */
 .invito {
   width: 600px; /* Doppio della larghezza iniziale */
-  height: 800px; /* Doppio dell'altezza iniziale */
+  height: 700px; /* Doppio dell'altezza iniziale */
   position: relative;
   overflow: hidden;
   cursor: pointer;
