@@ -12,3 +12,4 @@ document.getElementById('cover-right').addEventListener('click', () => {
         innerImage.style.display = 'flex';
     }, 1000); // Durata corrispondente alla transizione
 });
+
