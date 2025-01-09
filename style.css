@@ -17,27 +17,27 @@ body, html {
     position: relative;
     width: 100vw;
     height: 100vh;
-    perspective: 2000px; /* Aggiunge profondità 3D */
+    perspective: 2000px; /* Profondità per l'effetto 3D */
 }
 
 .cover-left, .cover-right {
     width: 50%;
     height: 100%;
     position: absolute;
+    overflow: hidden;
     backface-visibility: hidden; /* Nasconde il retro durante la rotazione */
-    transform-origin: center left; /* Punto di rotazione per la sinistra */
     transition: transform 1s ease-in-out; /* Animazione fluida */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Ombra */
 }
 
 .cover-left {
     left: 0;
-    transform-origin: center right; /* Punto di rotazione */
+    transform-origin: right center; /* Ruota attorno al bordo destro */
 }
 
 .cover-right {
     right: 0;
-    transform-origin: center left; /* Punto di rotazione */
+    transform-origin: left center; /* Ruota attorno al bordo sinistro */
 }
 
 .cover-left img, .cover-right img {
@@ -67,4 +67,5 @@ body, html {
     border-radius: 10px;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
 }
+
 
