@@ -17,23 +17,33 @@ body, html {
     position: relative;
     width: 100vw;
     height: 100vh;
-    display: flex;
+    perspective: 2000px; /* Aggiunge profondità 3D */
 }
 
 .cover-left, .cover-right {
     width: 50%;
     height: 100%;
-    overflow: hidden;
-    transition: all 1s ease;
     position: absolute;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Ombra aggiuntiva */
+    backface-visibility: hidden; /* Nasconde il retro durante la rotazione */
+    transform-origin: center left; /* Punto di rotazione per la sinistra */
+    transition: transform 1s ease-in-out; /* Animazione fluida */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Ombra */
+}
+
+.cover-left {
+    left: 0;
+    transform-origin: center right; /* Punto di rotazione */
+}
+
+.cover-right {
+    right: 0;
+    transform-origin: center left; /* Punto di rotazione */
 }
 
 .cover-left img, .cover-right img {
     width: 100%;
-    height: auto;
-    object-fit: cover; /* Assicura un adattamento corretto */
-    object-position: center; /* Centra il contenuto dell'immagine */
+    height: 100%;
+    object-fit: cover;
 }
 
 .inner-image {
@@ -42,30 +52,19 @@ body, html {
     left: 0;
     width: 100vw;
     height: 100vh;
-    display: none; /* Nasconde l'immagine interna fino alla transizione */
+    display: none; /* Nasconde l'immagine interna fino all'apertura */
     justify-content: center;
     align-items: center;
 }
 
 .inner-image img {
-    object-fit: cover; /* Adatta l'immagine riempiendo lo spazio */
-    object-position: center; /* Centra l'immagine */
+    object-fit: cover;
+    object-position: center;
     width: 100%;
     height: auto;
-    max-width: 90%; /* Aggiunto per evitare overflow su schermi piccoli */
+    max-width: 90%;
     max-height: 90%;
-    border-radius: 10px; /* Per un tocco più estetico */
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3); /* Ombra per maggiore contrasto */
+    border-radius: 10px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
 }
 
-.cover-left {
-    left: 0;
-}
-
-.cover-right {
-    right: 0;
-}
-
-.hidden {
-    display: none;
-}
