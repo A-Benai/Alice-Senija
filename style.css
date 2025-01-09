@@ -26,11 +26,14 @@ body, html {
     overflow: hidden;
     transition: all 1s ease;
     position: absolute;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Ombra aggiuntiva */
 }
 
-.cover-left img, .cover-right img, .inner-image img {
+.cover-left img, .cover-right img {
     width: 100%;
     height: auto;
+    object-fit: cover; /* Assicura un adattamento corretto */
+    object-position: center; /* Centra il contenuto dell'immagine */
 }
 
 .inner-image {
@@ -39,9 +42,20 @@ body, html {
     left: 0;
     width: 100vw;
     height: 100vh;
-    display: none;
+    display: none; /* Nasconde l'immagine interna fino alla transizione */
     justify-content: center;
     align-items: center;
+}
+
+.inner-image img {
+    object-fit: cover; /* Adatta l'immagine riempiendo lo spazio */
+    object-position: center; /* Centra l'immagine */
+    width: 100%;
+    height: auto;
+    max-width: 90%; /* Aggiunto per evitare overflow su schermi piccoli */
+    max-height: 90%;
+    border-radius: 10px; /* Per un tocco più estetico */
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3); /* Ombra per maggiore contrasto */
 }
 
 .cover-left {
@@ -50,13 +64,6 @@ body, html {
 
 .cover-right {
     right: 0;
-}
-
-.inner-image-content {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
 }
 
 .hidden {
